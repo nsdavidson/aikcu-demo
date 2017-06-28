@@ -1,0 +1,1 @@
+default['aikcu-demo']['message'] = "Hello world!"
