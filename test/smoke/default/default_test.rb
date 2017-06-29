@@ -25,3 +25,11 @@ describe http("http://localhost:#{port}") do
   its('status') { should cmp 200 }
   its('body') { should include 'Hello world!' }
 end
+
+users = ['nolan', 'walter']
+users.each do |username|
+  describe user(username) do
+    it { should exist }
+    its('home') { should eq "/home/#{username}"}
+  end
+end

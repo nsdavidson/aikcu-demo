@@ -4,12 +4,12 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 include_recipe 'apt::default'
+include_recipe 'aikcu-demo::users'
 
 if node.platform_family? 'rhel'
   apache_name = 'httpd'
 else
   apache_name = 'apache2'
-  package 'curl'
 end
 
 package apache_name do
